@@ -6,4 +6,8 @@ describe('Dummy unit tests', function() {
       expect(1+1).to.equal(2);
   });
 
+  it('should correctly compute product of 2 and 3', function() {
+      expect(2*3).to.equal(6);
+  });
+
 });
