@@ -7,6 +7,8 @@ node {
    checkout scm
    sh 'npm prune'
    sh 'npm install'
+   sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
+   step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
    
    stage 'Integration Tests'
    echo 'Hello World 2'
