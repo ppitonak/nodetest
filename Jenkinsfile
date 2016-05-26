@@ -1,7 +1,7 @@
 node {
    stage 'Unit Tests'
    echo 'Hello World 1'
-   def nodeHome = tool 'node-6.2.0'
+   def nodeHome = tool 'nodejs-6.2.0'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
    sh 'npm install'
    
