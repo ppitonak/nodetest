@@ -18,4 +18,6 @@ node {
    sh 'sleep 60'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
+   
+   archive 'main.js'
 }
