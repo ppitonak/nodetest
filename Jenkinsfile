@@ -3,8 +3,8 @@ node {
    def nodeHome = tool 'nodejs-6.2.0'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
    
-   stage 'Checkout'
-   checkout scm
+   //stage 'Checkout'
+   //checkout scm
    
    stage 'Unit Tests'
    sh 'npm prune'
