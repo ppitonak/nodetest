@@ -14,13 +14,11 @@ node {
    
    stage 'Integration Tests'
    env.USER = 'jenkins'
-   withEnv(['USER=jenkins']) {
-      wrap([$class: 'Xvnc']) {
-         sh 'npm prune'
-         sh 'npm install'
-         sh 'sleep 20'
-         sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
-      }
+   wrap([$class: 'Xvnc']) {
+      sh 'npm prune'
+      sh 'npm install'
+      sh 'sleep 20'
+      sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    }
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
    
