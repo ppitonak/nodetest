@@ -2,7 +2,7 @@ node {
    
    def nodeHome = tool 'nodejs-6.2.0'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
-   env.USER = jenkins
+   env.USER = 'jenkins'
    
    stage 'Checkout'
    checkout scm
