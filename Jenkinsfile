@@ -8,7 +8,7 @@ node {
    checkout scm
    
    stage 'Unit Tests'
-   sh 'echo "USER: $USER'
+   sh 'echo "USER: $USER"'
    sh 'npm prune'
    sh 'npm install'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
