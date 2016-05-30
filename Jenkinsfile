@@ -13,8 +13,8 @@ node {
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
    
    stage 'Integration Tests'
+   env.USER = 'jenkins'
    wrap([$class: 'Xvnc']) {
-      env.USER = 'jenkins'
       sh 'npm prune'
       sh 'npm install'
       sh 'sleep 20'
