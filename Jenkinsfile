@@ -7,10 +7,12 @@ node {
    checkout scm
    
    stage 'Unit Tests'
+   setGitHubPullRequestStatus([context: 'Unit Tests', state: 'PENDING'])
    sh 'npm prune'
    sh 'npm install'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
+   setGitHubPullRequestStatus([context: 'Unit Tests', state: 'SUCCESS'])
    
    stage 'Integration Tests'
    sh 'npm prune'
