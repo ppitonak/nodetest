@@ -11,6 +11,7 @@ node {
    sh 'npm install'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
+   setGitHubPullRequestStatus([context: 'Jenkins Unit Tests', state: 'SUCCESS'])
    
    stage 'Integration Tests'
    sh 'npm prune'
