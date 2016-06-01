@@ -2,7 +2,6 @@ node {
    
    def nodeHome = tool 'nodejs-6.2.0'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
-   properties [[$class: 'GithubProjectProperty', displayName: 'Nodetest', projectUrlStr: 'https://github.com/ppitonak/nodetest/']]
    
    stage 'Checkout'
    checkout scm
@@ -18,7 +17,7 @@ node {
    stage 'Integration Tests'
    sh 'npm prune'
    sh 'npm install'
-   sh 'sleep 60'
+   sh 'sleep 30'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
    
