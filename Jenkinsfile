@@ -2,6 +2,7 @@ node {
    
    def nodeHome = tool 'nodejs-6.2.0'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
+   properties [[$class: 'GithubProjectProperty', displayName: 'Nodetest', projectUrlStr: 'https://github.com/ppitonak/nodetest/']]
    
    stage 'Checkout'
    checkout scm
