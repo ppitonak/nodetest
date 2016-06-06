@@ -1,6 +1,6 @@
 node {
    
-   def nodeHome = tool 'nodejs-6.2.0'
+   def nodeHome = tool 'nodejs-6.2.1'
    env.PATH = "${nodeHome}/bin:${env.PATH}"
    properties [[$class: 'GithubProjectProperty', displayName: 'Nodetest', projectUrlStr: 'https://github.com/ppitonak/nodetest/']]
    
