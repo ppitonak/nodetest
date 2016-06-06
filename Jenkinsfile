@@ -4,8 +4,8 @@ node {
    env.PATH = "${nodeHome}/bin:${env.PATH}"
    //properties [[$class: 'GithubProjectProperty', displayName: 'Nodetest', projectUrlStr: 'https://github.com/ppitonak/nodetest/']]
    
-   stage 'Checkout'
-   checkout scm
+   //stage 'Checkout'
+   //checkout scm
    
    stage 'Unit Tests'
    //setGitHubPullRequestStatus state: 'PENDING', context: 'Unit Tests', message: "Run #${env.BUILD_NUMBER} started"
