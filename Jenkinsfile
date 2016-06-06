@@ -15,7 +15,7 @@ node {
    stage 'Integration Tests'
    sh 'npm prune'
    sh 'npm install'
-   sh 'sleep 60'
+   sh 'sleep 30'
    sh 'XUNIT_FILE=unit-tests.xml npm test -- --reporter xunit-file'
    step([$class: 'JUnitResultArchiver', testResults: 'unit-tests.xml'])
    
