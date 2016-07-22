@@ -1,3 +1,5 @@
+#!groovy
+
 node {
    
    def nodeHome = tool 'nodejs-6.2.1'
